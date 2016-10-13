@@ -1,0 +1,1 @@
+export const Login = { login: 'admin', password: 'root'};
