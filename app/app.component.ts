@@ -8,8 +8,7 @@ import { TodoService } from './services/todo.service';
                     <h1>{{title}}</h1>
                 </header>
                 <nav-directive></nav-directive>
-                <router-outlet></router-outlet>
-                <footer-directive></footer-directive>`,
+                <router-outlet></router-outlet>`,
     providers: [TodoService]
 })
 export class AppComponent {

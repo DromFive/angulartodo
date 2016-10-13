@@ -18,6 +18,7 @@ import { TodoItem } from '../data.model';
         </div>
       </article>
     </section>
+    <footer-directive *ngIf="todos" [todos]="todos"></footer-directive>
   `,
   providers: [ TodoService ]
 })
