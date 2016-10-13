@@ -13,6 +13,7 @@ import { TodoItem } from '../data.model';
           <p><u>Todo numéro {{todo.id}} :</u></p>
           <p><b>{{todo.title}}</b></p>
           <p>{{todo.details}}</p>
+          <button (click)=delete(todo.id)>Supprimer</button>
           <hr>
         </div>
       </article>
@@ -31,6 +32,10 @@ export class ToDoArchivesComponent {
     getTodos() {
         this.todoService.getTodos()
             .then(a => this.todos = a);
+    }
+
+    delete(id: number) {
+        this.todoService.deleteTodo(id).then(a => this.todos = a);
     }
 
     ngOnInit() {

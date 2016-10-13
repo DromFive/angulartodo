@@ -21,4 +21,21 @@ export class TodoService {
         TODO.push(newTodo);
         return Promise.resolve(TODO);
     }
+
+    deleteTodo(id: number): Promise<TodoItem[]> {
+        let test: boolean = true;
+        let i: number = 0;
+
+        // je parcours le tableau jusqua trouver l'id correspondant
+        while (test && i < TODO.length) {
+            if (TODO[i].id == id) {
+                //je le delete
+                TODO.splice(i, 1);
+                test = false;
+            }
+            i++;
+        }
+        //et je renvoie le nouveau tableau
+        return Promise.resolve(TODO);
+    }
 };
