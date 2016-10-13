@@ -13,6 +13,10 @@ const appRoutes: Routes = [
     {
         path: 'home',
         component: ToDoComponent
+    },
+    {
+        path: 'archives',
+        component: ToDoArchivesComponent
     }
 ];
 
