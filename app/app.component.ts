@@ -1,7 +1,17 @@
 import { Component } from '@angular/core';
+import { TodoService } from './services/todo.service';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular App</h1>'
+    template: `
+                <header>
+                    <h1>{{title}}</h1>
+                </header>
+                <nav-directive></nav-directive>
+                <router-outlet></router-outlet>
+                <footer-directive></footer-directive>`,
+    providers: [TodoService]
 })
-export class AppComponent { }
+export class AppComponent {
+    title = 'TodoList';
+}
