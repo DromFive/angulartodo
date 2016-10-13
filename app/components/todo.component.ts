@@ -13,6 +13,7 @@ import { TodoItem } from '../data.model';
           <p><u>Todo numéro {{todo.id}} :</u></p>
           <p><b>{{todo.title}}</b></p>
           <textarea style="width:100%;min-height:50px;"[(ngModel)]="todo.details"></textarea>
+          <button (click)="todo.done = true">Effectuée</button>
           <hr>
         </div>
       </article>
