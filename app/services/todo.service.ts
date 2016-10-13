@@ -15,8 +15,15 @@ export class TodoService {
     }
 
     createTodo(newTodo: TodoItem): Promise<TodoItem[]> {
-        //ici on recupere le dernier id
-        newTodo.id = TODO[TODO.length - 1].id + 1;
+
+        //erreur quand lenght = 0 donc on fait un if
+
+        if (TODO.length > 0) {
+            //ici on recupere le dernier id
+            newTodo.id = TODO[TODO.length - 1].id + 1;
+        } else {
+            newTodo.id = 1;
+        }
 
         TODO.push(newTodo);
         return Promise.resolve(TODO);
