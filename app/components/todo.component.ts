@@ -7,6 +7,15 @@ import { TodoItem } from '../data.model';
   selector: 'homepage-component',
   template: `  
     <section>
+      <article>
+        <p>Titre :</p>
+        <input [(ngModel)]="newTodo.title" placeholder="Titre">
+        <p>Details :</p>
+        <textarea style="width:100%;min-height:50px;"[(ngModel)]="newTodo.details"></textarea>
+        <button (click)="createTodo()">Ajouter la todo</button>
+      </article>
+      <hr>
+      <hr>
       <article *ngFor="let todo of todos">
         <!--On verifie ici que le todo n'est pas fait-->
         <div *ngIf="!todo.done">
@@ -24,6 +33,7 @@ import { TodoItem } from '../data.model';
 
 export class ToDoComponent {
     todos: TodoItem[];
+    newTodo: TodoItem;
 
     constructor(
         private todoService: TodoService,
@@ -36,7 +46,17 @@ export class ToDoComponent {
             .then(a => this.todos = a);
     }
 
-    ngOnInit() { 
-        this.getTodos(); 
+    createTodo() {
+      this.todoService.createTodo(this.newTodo).then(a => this.todos = a);
+      this.resetInput();
+    }
+
+    resetInput() {
+      this.newTodo = {id: 0, title: '', details: '', done: false};
+    }
+
+    ngOnInit() {
+        this.getTodos();
+        this.resetInput();
     }
 }

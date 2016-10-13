@@ -3,7 +3,7 @@ import {TodoItem} from "./data.model";
 export const TODO: TodoItem[] = [
     new TodoItem({id: 1, title: '#US1', details: 'En tant qu’utilisateur je vois sur la page d’accueil la liste des tâches à réaliser', done: true}),
     new TodoItem({id: 2, title: '#US2', details: 'En tant qu’utilisateur je peux valider une tâche en cliquant sur le bouton « Effectuée » sur chaque tâche de la liste des tâches à réaliser, ce qui supprime la tâche de la liste des tâches à réaliser.', done: true}),
-    new TodoItem({id: 3, title: '#US3', details: 'En tant qu’utilisateur je peux ajouter une tâche dans la liste depuis la page d’accueil.', done: false}),
+    new TodoItem({id: 3, title: '#US3', details: 'En tant qu’utilisateur je peux ajouter une tâche dans la liste depuis la page d’accueil.', done: true}),
     new TodoItem({id: 4, title: '#US4', details: 'En tant qu’utilisateur je visualise le menu de navigation sur toutes les pages.',  done: false}),
     new TodoItem({id: 5, title: '#US5', details: 'En tant qu’utilisateur je peux accéder aux pages « Tâche à faire » et « Archives » depuis la navigation.', done: false}),
     new TodoItem({id: 6, title: '#US6', details: 'En tant qu’utilisateur je peux voir la liste des tâches réalisées sur la page « Archives ».', done: false}),
